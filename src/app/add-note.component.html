@@ -1,0 +1,9 @@
+<form (submit)="addNote(); $event.preventDefault()">
+  <label>Title:</label><br />
+  <input [(ngModel)]="title" name="title" /><br /><br />
+
+  <label>Body:</label><br />
+  <textarea [(ngModel)]="body" name="body"></textarea><br /><br />
+
+  <button type="submit">Add Note</button>
+</form>

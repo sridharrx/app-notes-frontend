@@ -1,14 +1,17 @@
+<!-- Loading Indicator -->
 <div *ngIf="noteService.loading()">
   <p>Loading notes...</p>
 </div>
 
+<!-- No Notes Message -->
 <div *ngIf="!noteService.loading() && noteService.notes().length === 0">
   <p>No notes yet.</p>
 </div>
 
-<ul *ngIf="!noteService.loading() && noteService.notes().length > 0">
-  <li *ngFor="let note of noteService.notes()">
-    <strong>{{ note.title }}</strong><br />
-    {{ note.body }}
-  </li>
-</ul>
+<!-- Card List -->
+<div *ngIf="!noteService.loading() && noteService.notes().length > 0">
+  <div *ngFor="let note of noteService.notes()" class="note-card">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.body }}</p>
+  </div>
+</div>

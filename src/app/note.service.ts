@@ -6,6 +6,7 @@ import { signal } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class NoteService {
   private baseUrl = 'https://app-notes-fullstack.onrender.com/api/notes';
+  //private baseUrl = 'http://localhost:3000/api/notes';
 
   notes = signal<Note[]>([]);
   loading = signal(false);
